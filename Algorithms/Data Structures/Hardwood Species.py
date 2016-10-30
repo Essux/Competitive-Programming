@@ -8,18 +8,17 @@ def processTree():
             word = input()
             if word == "":
                 return count
-            if word not in trees:
-                trees[word] = 1
-            else:
-                trees[word] += 1
+            trees[word] = trees.get(word, 0) + 1
             count += 1
     except EOFError:
         return count
 
+def printAnswer(word):
+    print(word, " %.4f" % (trees[word] / totalTrees *100))
+
 while n:
     totalTrees = processTree()
-    for a in trees.keys():
-        print(a, " %.4f" % (trees[a] / totalTrees *100))
-    trees = {}
+    list(map(printAnswer, trees.keys()))
+    trees = {{}
     if n != 1: print()
     n-=1
