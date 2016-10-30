@@ -4,8 +4,7 @@ def process(line):
         return line
     else:
         line = line[1:-1]
-        oparen = 0
-        cparen = 0
+        oparen, cparen= 0, 0
         for j in range(len(line)):
             if line[j] == '(':
                 oparen += 1
@@ -19,7 +18,5 @@ def process(line):
                     break
         return process(line[:j]) + process(line[j + 1:]) + line[j]
 
-
 for i in range(int(input())):
-    line = input()
-    print(process(line))
+    print(process(input()))
