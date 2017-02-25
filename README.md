@@ -1,2 +1,2 @@
 # My-Stuff
-A repository for my code
+Here are uploaded solutions to problems from different Judges.
