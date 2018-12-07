@@ -1,3 +1,4 @@
+// UVa 970 - Particles
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
@@ -28,7 +29,6 @@ void dp() {
                     if (memo[j][k][p])
                     for (int q = 0; q < 3; q++) {
                         if (memo[k+1][j+i][q]) {
-                            //printf("(%d %d %c) ^ (%d %d %c) -> (%d %d %c)\n", j, k, p+'X', k+1, j+i, q+'X', j, j+i, trans[p][q]+'X');
                             memo[j][j+i][trans[p][q]] = 1;
                         }
                     }
